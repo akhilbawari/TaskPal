@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.taskpal.exception.BadRequestException;
 import com.taskpal.model.User;
 import com.taskpal.repository.UserRepository;
 
@@ -37,7 +38,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         // Check if email is verified
         if (!user.isEmailVerified()) {
-            throw new UsernameNotFoundException("Email not verified for user: " + email);
+            throw new BadRequestException("Email not verified for user: " + email);
         }
 
         return new org.springframework.security.core.userdetails.User(
