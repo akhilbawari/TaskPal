@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button } from "../ui/button";
-import { Input } from "../ui/input";
+import { Input, PasswordInput } from "../ui/input";
 import { Label } from "../ui/label";
 import { loginSchema } from "../../schemas/validation";
 import { USERS_LOGIN } from "@/imports/api";
@@ -87,9 +87,8 @@ function Login() {
 
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
-              <Input
+              <PasswordInput
                 id="password"
-                type="password"
                 autoComplete="current-password"
                 {...register("password")}
                 className={errors.password ? "border-destructive" : ""}

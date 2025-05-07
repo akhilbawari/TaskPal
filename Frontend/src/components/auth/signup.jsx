@@ -127,7 +127,6 @@ function Signup() {
               <Label htmlFor="password">Password</Label>
               <PasswordInput
                 id="password"
-                type="password"
                 autoComplete="new-password"
                 {...register("password")}
                 className={errors.password ? "border-destructive" : ""}
@@ -144,7 +143,6 @@ function Signup() {
               <Label htmlFor="confirmPassword">Confirm password</Label>
               <PasswordInput
                 id="confirmPassword"
-                type="password"
                 autoComplete="new-password"
                 {...register("confirmPassword")}
                 className={errors.confirmPassword ? "border-destructive" : ""}
